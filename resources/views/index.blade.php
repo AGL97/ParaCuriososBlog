@@ -5,50 +5,9 @@
 
 @section('content')
   @if(!empty($card))
-    <div class="d-flex welcome flex-column justify-content-center align-items-center" style="
-    background-image: url('assets/images/{{$card->imageRoute}}');"> 
-        <style>
-            .latest{
-                animation: 1s on-off alternate infinite
-            } 
-
-            @keyframes on-off
-            {
-                0%{
-                    background-color: rgb(240, 239, 239);
-                    color: #000;
-                }
-                14%{
-                    background-color: rgb(207, 205, 205);
-                    color: #000;
-                }
-                28%{
-                    background-color: rgb(110, 109, 109);
-                    color: #ffffff;
-                }
-                42%{
-                    background-color: rgb(24, 23, 23);
-                    color: #ffffff;
-                }
-                56%{
-                    background-color: rgb(110, 109, 109);
-                    color: #ffffff;
-                }
-                70%{
-                    background-color: rgb(207, 205, 205);
-                    color: #000;
-                }
-                84%{
-                    background-color: rgb(240, 239, 239);
-                    color: #000;
-                } 
-                100%{
-                    background-color: rgb(255, 255, 255);
-                    color: #000;
-                } 
-            }
-        </style>    
-        <h1>Bienvenido a nuestro blog</h1>  
+    <div class="d-flex welcome flex-column justify-content-center align-items-center">
+        <h1>Bienvenido a nuestro blog</h1>
+        <img src="{{asset('storage/images/$card->imageRoute')}}" alt="">  
         <a class="btn btn-light latest" href="{{route('post.show',$card->id)}}">Latest</a>          
     </div>    
   @endif
@@ -96,5 +55,5 @@
 
 
 @section('styles')
-    <link rel="stylesheet" href="{{asset('index.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/index.css')}}">
 @endsection

@@ -7,17 +7,20 @@
     <link rel="stylesheet" href="{{asset('bootstrap/dist/css/bootstrap.min.css')}}">
     <link rel="icon" href="{{asset('icons8-logo-16.png')}}" type="image/png"   sizes="16x16">
     <script src="{{asset('bootstrap/dist/js/bootstrap.bundle.min.js')}}" defer></script>
-
+    <link rel="stylesheet" href="{{asset('assets/css/landing.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/menu.css')}}">
     @yield('styles')
+   
 
     <title> @yield('title') </title>
 
 </head>
-<body class="bg-dark">
+<body>  
   
   @include('layouts._partials.menu')
-
-  @yield('content')    
+  <main>
+    @yield('content')    
+  </main>  
   
   @include('layouts._partials.footer')
 

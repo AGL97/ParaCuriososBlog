@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\Card;
-use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\CardRequest;
+use Illuminate\Validation\Rules\File;
 
 class PostController extends Controller
 {
@@ -30,9 +30,27 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(CardRequest $request):RedirectResponse
+    public function store(Request $request):RedirectResponse
     {
-        Card::create($request->all());
+        $request->validate([
+            'title'=>['required','max:40','min:5'],
+            'description' =>['required','min:20'],
+            'imageRoute' =>['required',File::image()->max('10mb')],
+            'category'=>['required','min:4']
+        ]);
+        $filename= time() . '.' . $request->imageRoute->extension();        
+
+        $request->imageRoute->storeAs('public/images',$filename);
+
+        Card::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'short_description' => substr($request->description,0, strlen($request->description)*0.3),
+            'imageRoute' => $filename,
+            'category' => $request->category,
+            'user_id' => auth()->user()->id
+        ]);
+
         return redirect()->route('index');
     }
 

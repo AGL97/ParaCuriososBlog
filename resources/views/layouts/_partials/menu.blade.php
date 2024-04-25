@@ -1,8 +1,7 @@
-<header">
+<header>
     <nav class="navbar navbar-expand-md">
         <div class="container-fluid">                  
-          <a class="navbar-brand" href="{{ route('index') }}">
-               
+          <a class="navbar-brand" href="{{ route('index') }}">    
             <img class="logo" src="{{asset('icons8-logo.svg')}}" alt="Logo" sizes="30">            
             <span style="font-size: 1.5em; font-weight:600; font-family:'Consolas'; color:white;"> ParaCuriososBlog</span>
           </a>        

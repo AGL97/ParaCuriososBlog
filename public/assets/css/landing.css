@@ -1,0 +1,6 @@
+body{
+    background-color: var(--bs-gray-800);
+    padding: 10px;
+    min-height: 100vh;
+    padding: 0 20px;
+}

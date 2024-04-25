@@ -1,5 +1,5 @@
 <div class="card mt-2" style="width:18rem;margin-left:10px">
-  <img class="card-img-top" src="{{asset("assets/images/$articleImage")}}" style="height: 200px" alt="montaña.jpg">
+  <img class="card-img-top" src="{{asset("storage/images/$articleImage")}}" style="height: 200px" alt="montaña.jpg">
   <div class="card-body bg-dark-subtle">
     <div class="card-title text-justify">
       <h4>{{$articleTitle}}</h4>

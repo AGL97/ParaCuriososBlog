@@ -7,7 +7,7 @@
         @csrf
         @method('PUT')
         <div class=" container-fluid">
-            <div class=" col-sm-4 col-8 mb-3">
+            <div>
                 <div class="input-group">
                     <span class="input-group-text">Titulo:</span>
                     <input type="text" class="form-control" name="title" id="title" value="{{$card->title}}" aria-describedby="title">                    
