@@ -3,8 +3,10 @@ body{
 }
 .welcome{    
     height: 40dvh;
-    background-repeat: no-repeat;
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     object-fit: cover;
     color: #F4FFFB;
 }
@@ -17,6 +19,20 @@ body{
     animation: rota 800ms cubic-bezier(0.55, 0.085, 0.68, 0.53) alternate  infinite; 
     transform-origin: center center;
 }
+
+.blogs{
+    max-height: 250px;
+    flex-wrap: wrap;
+}
+
+
+
+span.textBlog{
+    text-align: center;
+    color:#F4FFFB
+}
+/* No coge el estilo span.textBlog por alguna razon por eso esta puesto en linea */
+
 
 .cards{
     width: fit-content;
@@ -39,6 +55,7 @@ body{
 .latest{
     animation: 1s on-off alternate infinite
 } 
+
 
 @keyframes on-off
 {

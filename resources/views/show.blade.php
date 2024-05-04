@@ -1,6 +1,8 @@
 @extends('layouts.landing')
 
-@section('title','Explore')
+@section('title')
+    {{__('show.navTitle')}}
+@endsection
 
 
 @section('content')

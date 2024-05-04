@@ -1,9 +1,11 @@
 @extends('layouts.landing')
 
-@section('title','Contact')
+@section('title')
+    {{__('contact.contact')}}
+@endsection
 
 @section('content')
-    <h1 class="h-10">Contact</h1>
+    <h1 class="h-10" style="color: #FFF">{{__('contact.contact')}}</h1>
 @endsection
 
 @section('styles')

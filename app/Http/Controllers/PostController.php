@@ -38,14 +38,16 @@ class PostController extends Controller
             'imageRoute' =>['required',File::image()->max('10mb')],
             'category'=>['required','min:4']
         ]);
-        $filename= time() . '.' . $request->imageRoute->extension();        
+        $filename = time() . '.' . $request->imageRoute->extension();        
 
         $request->imageRoute->storeAs('public/images',$filename);
+
+        $short_description = strlen($request->description) >= 35 ? substr($request->description,0,strpos($request->description,' ',35)) . "..." : $request->description; //Devuelve una peque;a descripcion de la proporcionada por el usuario. Encuentra la primera ocurrencia de un espacio en blanco luego del caracter numero 30.
 
         Card::create([
             'title' => $request->title,
             'description' => $request->description,
-            'short_description' => substr($request->description,0, strlen($request->description)*0.3),
+            'short_description' => $short_description,
             'imageRoute' => $filename,
             'category' => $request->category,
             'user_id' => auth()->user()->id
@@ -75,9 +77,30 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(CardRequest $request,int $id):RedirectResponse
+    public function update(Request $request,int $id):RedirectResponse
     {        
-        Card::find($id)->update($request->all());
+        $request->validate([
+            'title'=>['required','max:40','min:5'],
+            'description' =>['required','min:20'],
+            'imageRoute' =>['required',File::image()->max('10mb')],
+            'category'=>['required','min:4']
+        ]);
+
+        $filename = time() . '.' . $request->imageRoute->extension();        
+
+        $request->imageRoute->storeAs('public/images',$filename);
+
+        $short_description = strlen($request->description) >= 35 ? substr($request->description,0,strpos($request->description,' ',35)) . "..." : $request->description;
+
+        Card::find($id)->update(
+            [
+                'title' => $request->title,
+                'description' => $request->description,
+                'short_description' => $short_description,
+                'imageRoute' => $filename,
+                'category' => $request->category,
+                'user_id' => auth()->user()->id
+            ]);
         return redirect()->route('index');
     }
 

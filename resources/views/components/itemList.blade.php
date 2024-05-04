@@ -7,4 +7,3 @@
         a:hover{background-color: rgb(200, 204, 196);}
 </style>
 
-{{-- TODO: Hacer componente personalizado con esto y menu --}}

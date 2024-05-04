@@ -7,9 +7,13 @@
     <div class="card-text text-justify">
       <p>{{$shortArticleText}}</p>
     </div>
-    <div style="display: flex; justify-content:space-between; align-items:center; bottom:0 ; left:0; right:0;">
+    <div style="display: flex; justify-content:start; align-items:center;flex-wrap:wrap;bottom:0px;">
       <p class="categoryCard">{{$category}}</p>
       <style>
+        a{
+          margin-right: 5px;
+          margin-left: 5px;
+        }
         .categoryCard{
           background-color: #88928e;
           border-radius: 4px;
@@ -19,7 +23,7 @@
           color: #FFFFFF;
         }
       </style>
-      <a href="{{route('post.show',$id)}} " class="btn btn-success" style="color: #FFFFFF;">
+      <a href="{{route('article.show',$id)}} " class="btn btn-success" style="color: #FFFFFF;">
         Explorar
       </a> 
       @auth
@@ -29,7 +33,7 @@
         <form action="{{route('post.destroy',$id)}}" method="POST">
           @csrf
           @method('DELETE')
-          <button type="submit" class="btn btn-close"></button>
+          <button type="submit" class="btn btn-close" style="margin: 0px"></button>
         </form>
       @endauth
     </div>

@@ -1,12 +1,9 @@
 @extends('layouts.landing')
 
-@section('title','About')
-
+@section('title')
+    {{__('about.about')}}
 @section('content')
-    <h1 class="h-10">About</h1>
-    <div class="btn btn-primary">
-        <a href={{ route('index')}} style="text-decoration:none;  color:#fdfdfd;">Home</a>
-    </div>
+    <h1 class="h-10" style="color: #FFF">About</h1>    
 @endsection
 
 
