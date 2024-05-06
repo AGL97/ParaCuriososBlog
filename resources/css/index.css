@@ -1,16 +1,3 @@
-body{
-    background-color: #343a40;
-}
-.welcome{    
-    height: 40dvh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    object-fit: cover;
-    color: #F4FFFB;
-}
-
 .categories{
     margin-left: 5px;  
 }
@@ -25,20 +12,16 @@ body{
     flex-wrap: wrap;
 }
 
-
-
-span.textBlog{
+.textBlog{
     text-align: center;
     color:#F4FFFB
 }
-/* No coge el estilo span.textBlog por alguna razon por eso esta puesto en linea */
-
 
 .cards{
-    width: fit-content;
     display: flex;    
     flex-wrap: wrap;
-    margin-bottom: 40px;
+    justify-content:center;
+
 }
 
 @keyframes rota{
@@ -52,9 +35,25 @@ span.textBlog{
     }
 }
 
+
+
+.welcome{
+    height: 90dvh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+    color: #F4FFFB;
+}
+
 .latest{
     animation: 1s on-off alternate infinite
 } 
+
+.col-latest-img{
+    padding: 0px;
+}
 
 
 @keyframes on-off
@@ -93,9 +92,12 @@ span.textBlog{
     } 
 }
 
-.latest-article
-{
-    background-image: url('assets/images/{{$card->imageRoute}}'); 
+.search{
+    max-width: 300px;  
+    min-width: 90px; 
+    max-height:38px
 }
- 
 
+.noArticles{
+    color: #fff;
+}

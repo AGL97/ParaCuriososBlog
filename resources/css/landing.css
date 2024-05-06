@@ -1,0 +1,7 @@
+body{
+    background-color: var(--bs-gray-dark);/*#343a40;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1366px;
+}

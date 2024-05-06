@@ -57,6 +57,3 @@
         
 @endsection
  
-@section('styles')
-    <link rel="stylesheet" href="{{asset('assets/css/create.css')}}">
-@endsection

@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-md">
+    <nav class="background-menu navbar navbar-expand-md">
         <div class="container-fluid">                  
           <a class="navbar-brand" href="{{ route('index') }}">    
             <img class="logo" src="{{asset('icons8-logo.svg')}}" alt="Logo" sizes="30">            

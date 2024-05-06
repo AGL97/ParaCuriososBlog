@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+<div class="container-fluid">    
     <form action="{{route("post.update",$card->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')        
@@ -16,7 +17,7 @@
                         <input type="text" class="form-control" name="title" id="title" value="{{$card->title}}" aria-describedby="title">                    
                     </div>
                     @error('title')
-                            <p style="color:red;">{{$message}}</p>            
+                            <p class="error-messages">{{$message}}</p>            
                     @enderror
                 </div>
             </div>            
@@ -27,7 +28,7 @@
                         <textarea class=" form-control" name="description" id="description" aria-label="Description:" rows="10">{{$card->description}}</textarea>           
                     </div>
                     @error('description')
-                            <p style="color:red;">{{$message}}</p>            
+                            <p class="error-messages">{{$message}}</p>            
                     @enderror
                 </div>
             </div>
@@ -39,7 +40,7 @@
                         <input class="form-control" type="file" name="imageRoute" id="imageRoute" value="{{$card->imageRoute}}" placeholder="{{__('edit.select')}}">                                                  
                     </div>
                     @error('imageRoute')
-                            <p style="color:red;">{{$message}}</p>            
+                            <p class="error-messages">{{$message}}</p>            
                     @enderror   
                 </div>     
                 <div class="col-3">
@@ -48,7 +49,7 @@
                         <input class="form-control" type="text" name="category" id="category" value="{{$card->category}}">                                                  
                     </div>
                     @error('category')
-                            <p style="color:red;">{{$message}}</p>            
+                            <p class="error-messages">{{$message}}</p>            
                     @enderror   
                 </div>                 
             </div> 
@@ -57,15 +58,10 @@
                     <button type="submit" class="btn btn-success">{{__('edit.edit')}}</button>  
                 </div>
             </div> 
-
-           
-
         </div>     
-    </form>
+    </form>    
+</div>
         
         
 @endsection
 
-@section('styles')
-    
-@endsection

@@ -82,25 +82,25 @@ class PostController extends Controller
         $request->validate([
             'title'=>['required','max:40','min:5'],
             'description' =>['required','min:20'],
-            'imageRoute' =>['required',File::image()->max('10mb')],
+            'imageRoute' =>['nullable',File::image()->max('1mb')],
             'category'=>['required','min:4']
-        ]);
-
-        $filename = time() . '.' . $request->imageRoute->extension();        
-
-        $request->imageRoute->storeAs('public/images',$filename);
+        ]);        
+        
 
         $short_description = strlen($request->description) >= 35 ? substr($request->description,0,strpos($request->description,' ',35)) . "..." : $request->description;
-
-        Card::find($id)->update(
-            [
-                'title' => $request->title,
-                'description' => $request->description,
-                'short_description' => $short_description,
-                'imageRoute' => $filename,
-                'category' => $request->category,
-                'user_id' => auth()->user()->id
-            ]);
+        $card = Card::find($id);
+        $card->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'short_description' => $short_description,            
+            'category' => $request->category,
+            'user_id' => auth()->user()->id
+        ]);
+        if($request->hasFile('imageRoute')){
+            $filename = time() . '.' . $request->imageRoute->extension();      
+            $request->imageRoute->storeAs('public/images',$filename);
+            $card->update(['imageRoute' => $filename]);
+        }
         return redirect()->route('index');
     }
 

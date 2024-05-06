@@ -4,5 +4,5 @@ return  [
     'user' => 'User',
     'email' => 'Email',
     'password' => 'Password',
-    'submint' => 'Submit',
+    'submit' => 'Submit',
 ];

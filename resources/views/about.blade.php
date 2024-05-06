@@ -2,11 +2,16 @@
 
 @section('title')
     {{__('about.about')}}
+@endsection
+
 @section('content')
-    <h1 class="h-10" style="color: #FFF">About</h1>    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <h1 class="h-10 title-about">About</h1> 
+            </div>
+        </div>
+    </div>           
 @endsection
 
 
-@section('styles')
-    
-@endsection

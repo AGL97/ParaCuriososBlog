@@ -1,10 +1,28 @@
-.login{
-    border: 1px solid #333;
-    background-color: #a8a0a0bb;
-    width: fit-content;
+.row-login{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
 }
 
+.login{
+    padding: 10px;
+    border: 1px solid #333;
+    background-color: #a8a0a0bb;
+    border-radius: 5px;
+}
 
+.login-form{    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.error-message{
+    color: red;
+}
+
+/* 
 main{
     background-image: url('../img/1714077493.jpg');
     background-position: center;
@@ -52,5 +70,5 @@ form{
 {    
     width: 70%;
     
-}
+} */
 

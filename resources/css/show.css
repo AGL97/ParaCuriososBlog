@@ -1,0 +1,12 @@
+.show-img{    
+    height: 40dvh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.texto,
+.titulo{
+    color: #FFFFFF;
+}

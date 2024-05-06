@@ -1,4 +1,4 @@
 <?php
 return [
-    'anvTitle' => 'Article'
+    'navTitle' => ':Article'
 ];
