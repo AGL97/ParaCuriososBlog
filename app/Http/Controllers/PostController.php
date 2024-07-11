@@ -7,6 +7,7 @@ use Illuminate\View\View;
 use App\Models\Card;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\CardRequest;
+use Illuminate\Support\Number;
 use Illuminate\Validation\Rules\File;
 
 class PostController extends Controller
@@ -53,6 +54,8 @@ class PostController extends Controller
             'user_id' => auth()->user()->id
         ]);
 
+        toast()->success('Articulo creado!!!!','Toast Lindo')->push(); 
+
         return redirect()->route('index');
     }
 
@@ -68,7 +71,7 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(int $id):View
+    public function edit(int $id):View 
     {
         $card = Card::find($id);
         return view('edit',compact('card'));
@@ -101,7 +104,7 @@ class PostController extends Controller
             $request->imageRoute->storeAs('public/images',$filename);
             $card->update(['imageRoute' => $filename]);
         }
-        return redirect()->route('index');
+        return redirect()->route('index')->with('success');
     }
 
     /**
@@ -110,6 +113,6 @@ class PostController extends Controller
     public function destroy(int $id):RedirectResponse
     {
         Card::destroy($id);
-        return redirect()->route('index');
+        return redirect()->route('index')->with('success');
     }
 }

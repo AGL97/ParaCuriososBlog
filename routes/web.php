@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -9,8 +10,10 @@ use App\Http\Controllers\Contact;
 use App\Http\Controllers\Index;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PdfController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ShowArticleController;
+use App\Http\Controllers\TelegramController;
 use App\Http\Middleware\Language;
 use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
 
@@ -40,10 +43,15 @@ Route::group(['middleware' => ['auth']],function(){
 
 Route::get('lang/{lang}',[LanguageController::class,'switchLang'])->name('lang');
 
+Route::get('/ajax/cards/{index}',[Index::class,'getSmallCards'])->name('get.small.cards');
+Route::get('/ajax/all/',[Index::class,'getAllCards'])->name('get.all.cards');
 
+Route::get('/pdf/download/{id}',[PdfController::class,'generatePDF'])->name('download.pdf');
 
+Route::get('/telegram/message/{id}',[TelegramController::class,'sendMessage'])->name('telegram.messagge');
 
-
+Route::post('/excel/import',[AdminController::class,'importExcel'])->name('admin.import');
+Route::get('/excel/export',[AdminController::class,'exportExcel'])->name('admin.export');
 
 
 

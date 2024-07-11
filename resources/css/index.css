@@ -101,3 +101,38 @@
 .noArticles{
     color: #fff;
 }
+
+
+.col-more-articles{
+    margin: 5px;
+    padding-top: 50px;
+    padding-bottom: 100px;    
+}
+
+.btn-more-articles{
+    padding:0px; 
+    border:0px;
+}
+
+
+.more-articles{
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    fill: #7FFFD4;
+    border: 1px solid #7FFFD4;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #7FFFD4;
+    cursor: pointer;
+}
+
+.col-carousel{
+    padding: 0px;
+}
+
+
+
+/* .more-articles:hover{        
+    transition: transform 250ms cubic-bezier(0.86, 0, 0.07, 1) 0ms;
+    transform: scale(1.3);
+} */

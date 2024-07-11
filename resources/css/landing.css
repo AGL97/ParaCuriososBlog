@@ -3,5 +3,11 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     max-width: 1366px;
 }
+
+main{
+    max-width: 1080px;
+}
+

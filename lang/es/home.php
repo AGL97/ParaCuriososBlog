@@ -6,5 +6,9 @@
         'noArticles' => 'No hay artículos aún',
         'noTags' => 'No hay etiquetas',
         'allTag' => 'Todos',
-        'welcome' => 'Bienvenido a nuestro Blog'
+        'welcome' => 'Bienvenido a nuestro Blog',
+        'download'=> 'Descarga',
+        'explore' => 'Explorar',
+        'telegramMessage' =>'Compartir',        
+
     ];

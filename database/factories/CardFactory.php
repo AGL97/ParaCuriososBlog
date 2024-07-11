@@ -21,7 +21,7 @@ class CardFactory extends Factory
         return [
             "title" => fake()->sentence(3),
             "short_description" => fake()->sentence(),
-            "description" => fake()->paragraph(),
+            "description" => fake()->paragraph(40),
             "imageRoute" => "image_" . fake()->numberBetween(1,13) . ".jpg",
             "category" => $this->fakeCategories[fake()->numberBetween(0,3)],
             "user_id"  => fake()->numberBetween(1,10)

@@ -8,7 +8,7 @@ use Illuminate\View\View;
 
 class ShowArticleController extends Controller
 {
-    public function show(int $id):View
+    public function show($id):View
     {
         $card = Card::find($id);
         return view('show',compact('card'));

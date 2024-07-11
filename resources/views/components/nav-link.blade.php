@@ -1,0 +1,1 @@
+<a href="{{route($route,$id)}}" class="btn {{$typeButton}} link">{{$action}}</a>

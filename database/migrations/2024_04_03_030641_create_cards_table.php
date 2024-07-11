@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title',70);
             $table->string('short_description',100);
-            $table->text('description',500);
+            $table->text('description');
             $table->string('imageRoute');
             $table->string('category',15);
             $table->unsignedBigInteger('user_id');        

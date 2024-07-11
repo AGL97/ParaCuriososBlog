@@ -6,5 +6,8 @@
         'noArticles' => 'Not articles yet',        
         'noTags' => 'Not tags yet',
         'allTag' => 'All',        
-        'welcome' => 'Welcome to our Blog'
+        'welcome' => 'Welcome to our Blog',
+        'download'=> 'Download',
+        'explore' => 'Explore',
+        'telegramMessage' =>'Share',        
     ];

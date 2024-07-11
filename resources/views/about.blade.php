@@ -11,7 +11,16 @@
                 <h1 class="h-10 title-about">About</h1> 
             </div>
         </div>
-    </div>           
+    </div>      
+    
+    <div class="row">
+        <div class="col">
+            <p class="texto"></p>
+        </div>
+    </div>
+
+    
+
 @endsection
 
 

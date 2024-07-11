@@ -6,3 +6,31 @@ th{
     text-align: center;
 }
 
+.loading-spinner{
+    font-size: 5em; 
+    width:70px; 
+    height:70px;
+}
+
+.loading-text{
+    font-size:4em;
+}
+
+table,thead,tbody,tr,.loading{
+    transition: all 250ms ease-in-out 0ms;
+}
+
+.delete{
+    display: flex;
+    justify-content: flex-start;
+    margin: auto;
+}
+
+.excel{
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px;
+    color: #fff;
+}
+
+
